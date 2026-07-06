@@ -5,7 +5,7 @@
 </div>
 <h1 align=center>After Burner Climax — Nintendo Switch port</h1>
 
-A wrapper/native port of the Android version of **After Burner Climax** (SEGA /
+A wrapper/native port of the Android version of **After Burner Climax** v0.1.7 (SEGA /
 FishingCactus). It loads the original game binary (`libacb.so`) together with the
 FMOD runtime it ships (`libfmod.so` + `libfmodstudio.so`), provides a minimal
 Android (NativeActivity) environment around them, and runs the game natively on
