@@ -50,7 +50,6 @@ Set `DEVKITPRO` in your environment and run `make`; it produces `abc_nx.nro`.
 
 * `screen_width` / `screen_height` — render resolution; `-1` auto-picks
   1280×720 handheld / 1920×1080 docked.
-* `show_fps` — `1` draws an on-screen FPS counter in the top-left corner.
 
 ### Credits
 
@@ -69,3 +68,8 @@ No affiliation with SEGA or FishingCactus. "After Burner Climax" is a trademark 
 its respective owners. No game assets or original program code are included in
 this repository — you must provide your own legally-obtained copy. Licensed under
 the MIT License unless noted otherwise.
+
+### SaltyNX telemetry
+
+FPS and render resolution are published to SaltyNX shared memory for compatible overlays. The port continues normally when SaltyNX is not running. This reports presentation timing and resolution; it does not change the game's frame cap.
+The old wrapper FPS overlay and its `show_fps` setting have been removed. Existing config entries are ignored; use a SaltyNX-compatible overlay to view FPS.

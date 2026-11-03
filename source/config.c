@@ -15,8 +15,7 @@
 
 #define CONFIG_VARS \
   CONFIG_VAR_INT(screen_width); \
-  CONFIG_VAR_INT(screen_height); \
-  CONFIG_VAR_INT(show_fps);
+  CONFIG_VAR_INT(screen_height);
 
 Config config;
 
@@ -40,7 +39,6 @@ int read_config(const char *file) {
   memset(&config, 0, sizeof(Config));
   config.screen_width = -1; // auto
   config.screen_height = -1;
-  config.show_fps = 0;
 
   FILE *f = fopen(file, "r");
   if (f == NULL)

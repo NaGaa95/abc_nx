@@ -10,6 +10,7 @@
  * of the MIT license. See the LICENSE file for details.
  */
 
+#include "saltynx.h"
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -496,6 +497,8 @@ static void try_signal_controller(void) {
 }
 
 int main(void) {
+  saltynx_start();
+  atexit(saltynx_stop);
   // FastLoad for the boot load; boost_scan_log() (util.c) drops to Normal for
   // rendering. See util.c.
   cpu_boost(1);

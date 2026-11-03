@@ -37,6 +37,9 @@ LDFLAGS	=	-specs=$(DEVKITPRO)/libnx/switch.specs -g $(ARCH) -Wl,-Map,$(notdir $*
 # EGL/GLESv2 via switch-mesa; libstdc++ provides the GNU C++ runtime
 # (cxxabi/personality/type_info) the engine imports.
 # ffmpeg (switch-ffmpeg) decodes the SEGA intro logo (fmv.c).
+# Publish all EGL presentation paths, including guest import tables.
+LDFLAGS += -Wl,--wrap=eglSwapBuffers,--wrap=eglGetProcAddress,--wrap=__libnx_exit
+
 LIBS	:= -lEGL -lGLESv2 -lglapi -ldrm_nouveau \
 		-lavformat -lavcodec -lswscale -lswresample -lavutil -ldav1d -lz -lbz2 \
 		-lstdc++ -lnx -lm

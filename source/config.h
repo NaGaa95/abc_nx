@@ -30,7 +30,6 @@ extern int screen_height;
 typedef struct {
   int screen_width;
   int screen_height;
-  int show_fps;
 } Config;
 
 extern Config config;

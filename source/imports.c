@@ -44,7 +44,6 @@
 #include "android_host.h"
 #include "opensl.h"
 #include "fmv.h"
-#include "fps_overlay.h"
 #include "stubs.h"
 
 extern uintptr_t __cxa_atexit;
@@ -478,8 +477,7 @@ static EGLBoolean eglMakeCurrentHook(EGLDisplay dpy, EGLSurface draw, EGLSurface
 }
 static EGLBoolean eglSwapBuffersHook(EGLDisplay dpy, EGLSurface surf) {
   fmv_render_pump(); // play the SEGA intro logo here if the engine requested it
-  if (config.show_fps)
-    fps_overlay_render();
+
   return eglSwapBuffers(dpy, surf);
 }
 static void glClearHook(GLbitfield mask) {
